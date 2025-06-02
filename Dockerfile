@@ -14,7 +14,7 @@ COPY package*.json ./
 RUN npm install
 
 # Python bağımlılıkları için requirements.txt kopyala
-COPY requirements.txt .
+COPY requirements.txt ./flaskAPI
 
 # Python bağımlılıklarını yükle
 RUN pip install --no-cache-dir -r requirements.txt
@@ -29,7 +29,7 @@ RUN cd frontend && npm run build
 COPY backend ./backend
 
 # Flask API kodlarını kopyala
-COPY flaskapi ./flaskapi
+COPY flaskAPI ./flaskAPI
 
 # uploads klasörünü oluştur (eğer gerekiyorsa)
 RUN mkdir -p /app/backend/uploads
