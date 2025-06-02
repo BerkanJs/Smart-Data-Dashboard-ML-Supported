@@ -14,10 +14,10 @@ COPY package*.json ./
 RUN npm install
 
 # Python bağımlılıkları için requirements.txt kopyala
-COPY requirements.txt ./flaskAPI
+COPY flaskAPI/requirements.txt ./flaskAPI
 
 # Python bağımlılıklarını yükle
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r ./flaskAPI/requirements.txt
 
 # React frontend kodlarını kopyala
 COPY frontend ./frontend
