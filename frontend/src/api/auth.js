@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Backend API URL
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://smart-data-dashboard-ml-supported.onrender.com/api";
 
 
 export const register = async (userData) => {

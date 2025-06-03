@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // API URL
-const API_URL = "http://localhost:5000/api/data";
+const API_URL = "https://smart-data-dashboard-ml-supported.onrender.com/api/data";
 
 // Veri yükleme
 export const uploadData = async (data, token) => {

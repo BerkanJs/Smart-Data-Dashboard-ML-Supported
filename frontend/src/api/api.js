@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:5001/',  
+  baseURL: 'https://smart-data-dashboard-ml-supported-2.onrender.com/',  
   headers: {
     'Content-Type': 'application/json',
   },
@@ -36,7 +36,7 @@ export const uploadData = async (formData) => {
 
 export const imputeData = async ({ data, method }) => {
   try {
-    const response = await axios.post("http://127.0.0.1:5001/impute", {
+    const response = await axios.post("https://smart-data-dashboard-ml-supported-2.onrender.com/impute", {
       data: data,
       method: method
     });
@@ -51,7 +51,7 @@ export const trainAndPredict = async ({ data, target_column, model_type }) => {
   try {
     console.log("Gönderilen veri:", { data, target_column, model_type });
 
-    const response = await axios.post("http://127.0.0.1:5001/train_and_predict", {
+    const response = await axios.post("https://smart-data-dashboard-ml-supported-2.onrender.com/train_and_predict", {
       data: data,
       target_column: target_column,
       model_type: model_type,
