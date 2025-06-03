@@ -12,7 +12,7 @@ export const useDataStore = create((set) => ({
     }
     set({ loading: true, error: null });
     try {
-      const response = await axios.get(`http://localhost:5000/api/data/get/${userId}`);
+      const response = await axios.get(`https://smart-data-dashboard-ml-supported.onrender.com/api/data/get/${userId}`);
       console.log("Veri Getirildi: ", response.data);
       set({ data: response.data, loading: false });
     } catch (error) {
@@ -23,7 +23,7 @@ export const useDataStore = create((set) => ({
   uploadData: async (formData) => {  
     set({ loading: true, error: null });
     try {
-      const response = await axios.post('http://localhost:5000/api/data/upload', formData, {
+      const response = await axios.post('https://smart-data-dashboard-ml-supported.onrender.com/api/data/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       console.log("Veri Yüklendi: ", response.data); 
