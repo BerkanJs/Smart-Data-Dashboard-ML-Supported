@@ -10,7 +10,7 @@ sys.path.append('C:/Users/Berkan Özcelik/Desktop/Ml Project/Project/flaskAPI')
 app = Flask(__name__)
 
 
-CORS(app)
+CORS(app, origins=["https://smart-data-dashboard-ml-supported-1.onrender.com"])
 
 
 app.register_blueprint(impute_routes)

@@ -7,7 +7,12 @@ const fs = require('fs');
 dotenv.config();
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://smart-data-dashboard-ml-supported-1.onrender.com',
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 if (!fs.existsSync('uploads')) {
