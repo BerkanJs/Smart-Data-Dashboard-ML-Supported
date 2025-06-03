@@ -44,6 +44,11 @@ This project allows users to visualize, analyze their data, and gain meaningful 
 - **Prophet, XGBoost (optional)** – Time series forecasts
 - **Pandas, NumPy** – Data processing and analysis
 
+### 🐳 Docker & Deployment  
+- Multi-container or single-container Docker setup for frontend, backend, and ML API  
+- Continuous deployment to Render.com, including automated builds and image pushes  
+- HTTPS support and environment-based configuration for production readiness  
+
 ---
 
 
@@ -133,6 +138,11 @@ Bu proje, kullanıcıların verilerini görselleştirmelerine, analiz etmelerine
 - **Scikit-learn** – Segmentasyon, anomali tespiti
 - **Prophet, XGBoost (opsiyonel)** – Zaman serisi tahminleri
 - **Pandas, NumPy** – Veri işleme ve analiz
+  
+🐳 Docker & Deploy  
+- Frontend, backend ve ML API için çoklu ya da tek konteyner Docker yapısı  
+- Render.com üzerinde otomatik build ve deploy  
+- HTTPS desteği ve ortam bazlı konfigürasyonlarla üretim için hazır  
 
 ---
 
