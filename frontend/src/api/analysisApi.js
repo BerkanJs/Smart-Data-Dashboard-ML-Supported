@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // API URL
-const API_URL = "http://localhost:5000/api/analysis";
+const API_URL = "https://smart-data-dashboard-ml-supported-2.onrender.com/api/analysis";
 
 // Segmentasyon analizi
 export const getSegmentAnalysis = async (token) => {

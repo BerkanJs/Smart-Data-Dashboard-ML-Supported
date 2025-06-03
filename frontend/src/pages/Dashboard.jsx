@@ -52,7 +52,7 @@ const Dashboard = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/data/upload",
+        "http://https://smart-data-dashboard-ml-supported.onrender.com/api/data/upload",
         formData,
         {
           headers: {

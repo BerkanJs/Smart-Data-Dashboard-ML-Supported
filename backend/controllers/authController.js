@@ -75,7 +75,7 @@ exports.forgotPassword = async (req, res) => {
     await user.save();
 
     // E-posta gönderme
-    const resetUrl = `http://localhost:5000/resetPassword/${resetToken}`;
+    const resetUrl = `https://smart-data-dashboard-ml-supported.onrender.com/resetPassword/${resetToken}`;
     const mailOptions = {
       to: user.email,
       subject: 'Şifre sıfırlama talebi',

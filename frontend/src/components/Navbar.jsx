@@ -20,7 +20,7 @@ const Navbar = () => {
   
       try {
        
-        const response = await axios.delete(`http://localhost:5000/api/data/delete/${userId}`);
+        const response = await axios.delete(`http://https://smart-data-dashboard-ml-supported.onrender.com/api/data/delete/${userId}`);
         
      
         console.log("Backend Yanıtı:", response.data);
