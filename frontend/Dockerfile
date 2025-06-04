@@ -1,27 +1,30 @@
-# 1. Node.js resmi imajından başla
-FROM node:18
+# 1. Node.js base image ile build işlemi
+FROM node:18 AS builder
 
-# 2. Çalışma dizinini oluştur ve ayarla
+# 2. Çalışma dizini
 WORKDIR /app
 
-# 3. package.json ve package-lock.json (varsa) kopyala
+# 3. package.json dosyalarını kopyala ve bağımlılıkları yükle
 COPY package*.json ./
-
-# 4. Bağımlılıkları yükle
 RUN npm install
 
-# 5. Projedeki tüm dosyaları kopyala
+# 4. Tüm dosyaları kopyala
 COPY . .
 
-# 6. Projeyi build et (vite build çalıştır)
+# 5. Build işlemini yap
 RUN npm run build
 
-# 7. Production için hafif bir web server (serve, http-server ya da nginx kullanabilirsin)
-# Bu örnekte basit ve hızlı kurulum için serve kullanıyoruz.
-RUN npm install -g serve
+# 6. Production için nginx image kullan
+FROM nginx:stable-alpine
 
-# 8. Container dışına 3000 portunu aç
-EXPOSE 3000
+# 7. Build edilmiş dosyaları nginx html klasörüne kopyala
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# 9. Build edilmiş dosyaları serve ile sun
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# 8. Özel nginx.conf dosyasını kopyala
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# 9. Portu expose et (nginx varsayılan portu 80'dir)
+EXPOSE 80
+
+# 10. nginx başlat
+CMD ["nginx", "-g", "daemon off;"]
